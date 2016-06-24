@@ -1,0 +1,15 @@
+Configuracion del atMega1284p
+
+
+Para pasar el codigo al chip
+avrdude -c avrisp2 -p atmega1284p -P usb: -B 8 -U flash:w:$(TARGET).hex
+
+
+
+Para configurar los FUSE:
+(avrdude -c avrisp2 -p atmega1284p -P usb: -B 8) +
+Configuracion de los fusibles pueden ser obtenidos de l siguiente pagina::
+http://eleccelerator.com/fusecalc/fusecalc.php?chip=atmega1284p
+
+seguido se pone el codigo de configuracion:
+-U lfuse:w:0x42:m -U hfuse:w:0x99:m -U efuse:w:0xff:m 
